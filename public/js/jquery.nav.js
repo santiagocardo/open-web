@@ -61,7 +61,7 @@
 			}
 			
 			//Handle clicks on the nav
-			self.$nav.on('click.onePageNav', $.proxy(self.handleClick, self));
+			//self.$nav.on('click.onePageNav', $.proxy(self.handleClick, self));
 
 			//Get the section positions
 			self.getPositions();
