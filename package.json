@@ -4,8 +4,8 @@
   "description": "Open Fincas y Eventos Website",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,6 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
