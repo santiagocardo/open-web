@@ -226,7 +226,7 @@ block content
           #contact-form.cform
             #sendmessage Tu mensaje ha sido enviado. Gracias!
             #errormessage
-            form.contactForm(action='' method='post' role='form')
+            form.contactForm(action='/email' method='post' role='form')
               .form-group
                 input#name.form-control(type='text' name='name' placeholder='Tu Nombre' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres')
                 .validation

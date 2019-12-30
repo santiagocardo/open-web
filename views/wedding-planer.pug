@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  // section works
+  section#works.section.gray
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h2
+              span Eventos Open
+              hr
+          .sub-heading
+            p
+              | Algunos de nuestros servicios
+      .row
+        .col-md-12
+          ul#grid.grid.effect
+            li
+              a.fancybox(data-fancybox-group='gallery' title='Alimentación' href='img/eventos/img-1.png')
+                img(src='img/eventos/img-1.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-2.png' data-fancybox-group='gallery' title='Entretenimiento')
+                img(src='img/eventos/img-2.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-3.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-3.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-4.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-4.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-5.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-5.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-6.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-6.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-7.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-7.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-1.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-1.png' alt='')
+  // end section works

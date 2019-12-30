@@ -4,6 +4,8 @@ const path = require('path')
 const helmet = require('helmet')
 const app = express()
 
+// const fincas = require('./routes/fincas')
+
 // Security
 app.use(helmet())
 
@@ -18,13 +20,25 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Routes
 app.get('/', (req, res) => {
   res.render('home')
 })
 
-app.get('/eventos', (req, res) => {
-  res.render('events')
+app.post('/email', (req, res) => {
+  console.log(req.body)
+  res.redirect('/')
 })
+
+app.get('/eventos', (req, res) => {
+  res.render('eventos')
+})
+
+app.get('/wedding-planner', (req, res) => {
+  res.render('wedding-planner')
+})
+
+// fincas(app)
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on port http://localhost:3000`)
