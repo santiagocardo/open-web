@@ -137,3 +137,27 @@ input[type="color"]:focus,
 	margin-left: 140px;
 	width: 170px;
 }
+
+@media (max-width: 992px) {
+	#devices .devices .tablet {
+		width: 250px;
+	}
+	#devices .devices .mobile {
+		bottom: -38px;
+		margin-left: 88px;
+		width: 110px;
+	}
+}
+
+@media (max-width: 768px) {
+	#devices .devices .mobile {
+		margin-left: 65px;
+	}
+}
+
+@media (max-width: 640px) {
+	#devices .devices .mobile {
+		margin-left: 50px;
+		width: 90px;
+	}
+}
