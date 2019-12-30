@@ -117,6 +117,10 @@ input[type="color"]:focus,
 	color: rgba(249, 178, 51, 0.96);
 }
 
+.logo {
+	width: 3em;
+}
+
 /* =============== SECTION DEVICES =============== */
 #devices {
 	padding-bottom: 0;
@@ -153,11 +157,17 @@ input[type="color"]:focus,
 	#devices .devices .mobile {
 		margin-left: 65px;
 	}
+	.logo {
+		width: 2.8em;
+	}
 }
 
 @media (max-width: 640px) {
 	#devices .devices .mobile {
 		margin-left: 50px;
 		width: 90px;
+	}
+	.logo {
+		width: 2.5em;
 	}
 }
