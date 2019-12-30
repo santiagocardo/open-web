@@ -1,0 +1,124 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Open | Fincas y Eventos
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  // styles
+  link(rel='stylesheet' href='css/fancybox/jquery.fancybox.css')
+  link(href='css/bootstrap.css' rel='stylesheet')
+  link(href='css/bootstrap-theme.css' rel='stylesheet')
+  link(rel='stylesheet' href='css/slippry.css')
+  link(href='css/style.css' rel='stylesheet')
+  link(rel='stylesheet' href='color/default.css')
+  script(src='js/modernizr.custom.js')
+body
+  block header
+    header
+      #navigation.navbar.navbar-inverse.navbar-fixed-top.default(role='navigation')
+        .container
+          // Brand and toggle get grouped for better mobile display
+          .navbar-header
+            button.navbar-toggle(type='button' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='#')
+              img(src='img/logos/marca2.png' width="20%")
+          .navigation
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              nav
+                ul.nav.navbar-nav.navbar-right
+                  li.current
+                    a(href='#intro') Home
+                  li
+                    a(href='#about') Fincas
+                  li
+                    a(href='#works') Eventos
+                  li
+                    a(href='#works') Wedding Planner
+                  li
+                    a(href='#contact') Contacto
+            // /.navbar-collapse
+
+  block content
+
+  block footer
+    footer
+      .verybottom
+        .container
+          .row
+            .col-md-12
+              .aligncenter
+                ul.social-network.social-circle
+                  li
+                    a.icoRss(href='#' title='Rss')
+                      i.fa.fa-rss
+                  li
+                    a.icoFacebook(href='#' title='Facebook')
+                      i.fa.fa-facebook
+                  li
+                    a.icoTwitter(href='#' title='Twitter')
+                      i.fa.fa-twitter
+                  li
+                    a.icoGoogle(href='#' title='Google +')
+                      i.fa.fa-google-plus
+                  li
+                    a.icoLinkedin(href='#' title='Linkedin')
+                      i.fa.fa-linkedin
+          .row
+            .col-md-12
+              .aligncenter
+                p
+                  | &copy; Open Fincas y Eventos - Todos los derechos reservados
+                .credits
+                  //
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Groovin
+                  | Designed by 
+                  a(href='http://santiagocardo.com/') Santiago Cardona
+    a.scrollup(href='#')
+      i.fa.fa-angle-up.fa-2x
+
+  block scripts
+    // javascript
+    script(src='js/jquery-1.9.1.min.js')
+    script(src='js/jquery.easing.js')
+    script(src='js/classie.js')
+    script(src='js/bootstrap.js')
+    script(src='js/slippry.min.js')
+    script(src='js/nagging-menu.js')
+    script(src='js/jquery.nav.js')
+    script(src='js/jquery.scrollTo.js')
+    script(src='js/jquery.fancybox.pack.js')
+    script(src='js/jquery.fancybox-media.js')
+    script(src='js/masonry.pkgd.min.js')
+    script(src='js/imagesloaded.js')
+    script(src='js/jquery.nicescroll.min.js')
+    script(src='js/AnimOnScroll.js')
+    script.
+      new AnimOnScroll(document.getElementById('grid'), {
+        minDuration: 0.4,
+        maxDuration: 0.7,
+        viewportFactor: 0.2
+      });
+    script.
+      $(document).ready(function () {
+        $('#slippry-slider').slippry(
+          defaults = {
+            transition: 'vertical',
+            useCSS: true,
+            speed: 5000,
+            pause: 3000,
+            initSingle: false,
+            auto: true,
+            preload: 'visible',
+            pager: false
+          }
+        )
+      });
+    script(src='js/custom.js')
+    script(src='contactform/contactform.js')

@@ -1,0 +1,139 @@
+::-moz-selection {
+  background: rgba(249, 178, 51, 0.96);
+}
+::selection {
+  background: rgba(249, 178, 51, 0.96);
+}
+
+a {
+  color: rgba(249, 178, 51, 0.96);
+}
+
+a:hover {
+	color: #ff9c00;
+}
+
+/* --- button theme --- */
+.btn-theme {
+  background: rgba(249, 178, 51, 0.96);
+  *background-color: rgba(249, 178, 51, 0.96);
+}
+
+.btn-theme:hover,
+.btn-theme:active,
+.btn-theme.active,
+.btn-theme.disabled,
+.btn-theme[disabled] {
+  background: #ff9c00;
+  *background: #ff9c00;
+}
+
+.btn-brown {
+	display: inline-block;
+	color: #7b6a58;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	text-align: center;
+	border: 2px solid #7b6a58;
+	font-size: 12px;
+	line-height: 100%;
+}
+
+.btn-theme:hover,
+.btn-theme:active,
+.btn-theme.active,
+.btn-theme.disabled,
+.btn-theme[disabled] {
+  background: #373533;
+  *background: #373533;
+}
+
+.scrollup {
+ background-color: rgba(249, 178, 51, 0.96);
+}
+
+/* fontawesome icons */
+[class^="icon-"].active,
+[class*=" icon-"].active {
+    background-color: rgba(249, 178, 51, 0.96);
+}
+
+
+ul.nav li.current {
+  color: rgba(249, 178, 51, 0.96);
+}
+
+.navbar .nav > li > a:hover,
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:active,
+.navbar .nav > li.active > a {
+    color: rgba(249, 178, 51, 0.96);!important;
+}
+
+.sy-pager li.sy-active a {
+  background-color: rgba(249, 178, 51, 0.96);
+}
+
+.navbar .nav > li > a:hover {
+  color: rgba(249, 178, 51, 0.96);
+}
+
+input:focus {
+	border: 1px solid rgba(249, 178, 51, 0.96);
+	border-width:1px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(249, 178, 51, 0.96);
+}
+
+
+/* tab */
+
+.nav-tabs > a {
+	color:rgba(249, 178, 51, 0.96);
+}
+
+
+/* accordion */
+.accordion-heading a:hover {
+	color: rgba(249, 178, 51, 0.96);
+}
+.accordion-heading .active{
+	color: rgba(249, 178, 51, 0.96);
+}
+
+/* =============== SECTION DEVICES =============== */
+#devices {
+	padding-bottom: 0;
+  margin-bottom: 60px;
+	background: #e0e0e0 url(../img/devices/bg-devices.jpg) no-repeat center center / cover;
+}
+#devices .devices {
+	position: relative;
+	text-align: center;
+}
+#devices .devices .tablet {
+	width: 380px;
+}
+#devices .devices .mobile {
+	position: absolute;
+	bottom: -60px;
+	left: 50%;
+	margin-left: 140px;
+	width: 170px;
+}

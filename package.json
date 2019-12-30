@@ -1,0 +1,39 @@
+{
+  "name": "open",
+  "version": "1.0.0",
+  "description": "Open Fincas y Eventos Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagocardo80/open-web.git"
+  },
+  "author": "Santiago Cardona",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/santiagocardo80/open-web/issues"
+  },
+  "homepage": "https://github.com/santiagocardo80/open-web#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "mongoose": "^5.8.3",
+    "passport": "^0.4.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  }
+}

@@ -1,0 +1,239 @@
+extends layout
+
+block content
+  // section intro
+  section#intro
+    ul#slippry-slider
+      li
+        a(href='#slide1')
+          img(src='img/slide/7.jpg' alt='Bienvenidos a Open Fincas y Eventos')
+      li
+        a(href='#slide2')
+          img(src='img/slide/2.jpg' alt='Eventos Empresariales, Sociales, Bodas...')
+      li
+        a(href='#slide3')
+          img(src='img/slide/4.jpg' alt="Check it out, you are going to <span class='red'>♥</span> it :)")
+  // end intro
+  // Section fincas
+  section#about.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h4
+              span #LugaresPerfectos
+          .sub-heading
+            p
+              | Busca entre las mejores opciones para ti
+      .row
+        .col-md-4
+          .team-box
+            img.img-responsive(src='img/fincas/gta.jpg' alt='')
+            .roles
+              h5
+                strong Girardota
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+        .col-md-4
+          .team-box
+            img.img-responsive(src='img/fincas/copa.jpg' alt='')
+            .roles
+              h5
+                strong Copacabana
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+        .col-md-4
+          .team-box
+            img.img-responsive(src='img/fincas/bsa.jpg' alt='')
+            .roles
+              h5
+                strong Barbosa
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+      .row
+        .text-center
+          button.btn.btn-lg.btn-brown(type='submit') Ver todas las fincas
+  // end section fincas
+  // section devices
+  section#devices
+    .container
+      .row
+        .heading
+          h4
+            span Comunícate con nosotros
+          p
+            | desde todos los dispositivos
+          .aligncenter
+            ul.social-network.social-circle
+              li
+                a(href='#' title='Facebook')
+                  i(style="color: rgba(249, 178, 51, 0.96)").fa.fa-facebook
+              li
+                a(href='#' title='Instagram')
+                  i(style="color: rgba(249, 178, 51, 0.96)").fa.fa-instagram
+              li
+                a(href='#' title='Twitter')
+                  i(style="color: rgba(249, 178, 51, 0.96)").fa.fa-twitter
+    .devices
+      img.tablet(src='img/devices/img-1.png' alt='')
+      img.mobile(src='img/devices/img-2.png' alt='')
+  // end section devices
+  // section services
+  section#nino-services
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        .heading
+          h3
+            span Trabajamos con increíbles servicios
+    .row
+      .col-md-4
+        h4.text-center
+          i.fa.fa-building-o.fa-lg
+          |  Para Tu Empresa
+        div
+          p Proporcionamos espacios campestres para d&iacute;as de sol.
+          p Dise&ntilde;amos y producimos todas las celebraciones del a&ntilde;o.
+          p Log&iacute;stica completa de tus programaciones academicas.
+          p Experiencias alternativas para promocionar tus productos o servicios.
+          p Estamos preparados para satisfacer toda tu l&iacute;nea de inter&eacute;s (Familia, proveedores, empleados, asociados.)
+      .col-md-4
+        h4.text-center
+          i.fa.fa-user.fa-lg
+          |  Para ti
+        div
+          p Celebraci&oacute;n de cumplea&ntilde;os, aniversarios, grados, baby shower, primeras comuniones, despedidas de solteros/as, etc.
+          p En #LugaresPerfectosOpen te ofrecemos diversas fincas en renta para todo el a&ntilde;o.
+          p Programate con Open para disfrutar de tus vacaciones con los innumerables viajes nacionales e internacionales.
+      .col-md-4
+        h4.text-center
+          i.fa.fa-camera.fa-lg
+          |  Wedding Planner
+        div
+          p Ofrecemos acompa&ntilde;amiento de una profesional en dise&ntilde;o, encargada de dirigir, contactar y concretar cada detalle de tu boda.
+  // end section services
+  // section works
+  section#works.section.gray
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h3
+              span Eventos Open
+          .sub-heading
+            p
+              | Algunos de nuestros servicios
+      .row
+        .col-md-12
+          ul#grid.grid.effect
+            li
+              a.fancybox(data-fancybox-group='gallery' title='Alimentación' href='img/eventos/img-1.png')
+                img(src='img/eventos/img-1.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-2.png' data-fancybox-group='gallery' title='Entretenimiento')
+                img(src='img/eventos/img-2.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-3.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-3.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-4.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-4.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-5.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-5.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-6.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-6.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-7.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-7.png' alt='')
+            li
+              a.fancybox(href='img/eventos/img-1.png' data-fancybox-group='gallery' title='Portfolio name')
+                img(src='img/eventos/img-1.png' alt='')
+  // end section works
+  // section clients
+  section#clients.section.gray
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h4
+              span Marcas que confian en nosotros
+          .sub-heading
+            p
+              | Hemos atentido algunas divisiones, dependencias y/o empresas completas
+      .row
+        .col-md-2
+          img.img-responsive(src='img/brand/img-7.jpg' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-10.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-1.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-6.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-3.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-4.png' alt='')
+      .row
+        .col-md-2.col-md-offset-1
+          img.img-responsive(src='img/brand/img-5.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-2.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-8.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-9.png' alt='')
+        .col-md-2
+          img.img-responsive(src='img/brand/img-11.png' alt='')
+  // section clients
+  // section contact
+  section#contact.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h3
+              span Contáctanos
+          .sub-heading
+            p
+              | Lorem ipsum dolor sit amet, mutat paulo simul per no, assum fastidii vituperata eam no.
+    .container
+      .row
+        .col-md-6
+          h4
+            i.icon-envelope
+            strong Formulario de Contacto
+          p
+            | Want to work with us or just want to say hello? Don&apos;t hesitate to get in touch!
+          // start contact form
+          #contact-form.cform
+            #sendmessage Your message has been sent. Thank you!
+            #errormessage
+            form.contactForm(action='' method='post' role='form')
+              .form-group
+                input#name.form-control(type='text' name='name' placeholder='Your Name' data-rule='minlen:4' data-msg='Please enter at least 4 chars')
+                .validation
+              .form-group
+                input#email.form-control(type='email' name='email' placeholder='Your Email' data-rule='email' data-msg='Please enter a valid email')
+                .validation
+              .form-group
+                input#subject.form-control(type='text' name='subject' placeholder='Subject' data-rule='minlen:4' data-msg='Please enter at least 8 chars of subject')
+                .validation
+              .form-group
+                textarea.form-control(name='message' rows='5' data-rule='required' data-msg='Please write something for us' placeholder='Message')
+                .validation
+              .text-center
+                button.btn.btn-lg.btn-theme(type='submit') Enviar Mensaje
+          // END contact form
+        .col-md-6
+          h4 Encuentra nuestra Casa Open
+          p View from google map
+          // map
+          #section-map.clearfix
+            iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452' width='100%' height='400' frameborder='0' style='border:0' allowfullscreen='')
+  // end section contact
