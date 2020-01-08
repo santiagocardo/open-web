@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  // Section fincas
+  section#about.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h4
+              span #LugaresPerfectos
+          .sub-heading
+            p
+              | Busca entre las mejores opciones para ti
+      .row
+        .col-md-3.col-xs-4
+          .list-group
+            a.list-group-item.text-center(href='#')
+              h6 Todas
+            a.list-group-item.text-center(href='#') Girardota
+            a.list-group-item.text-center(href='#') Copacabana
+            a.list-group-item.text-center(href='#') Barbosa
+            a.list-group-item.text-center(href='#') Sopetrán
+            a.list-group-item.text-center(href='#') San Jerónimo
+            a.list-group-item.text-center(href='#') Santa Fe de Ant.
+            a.list-group-item.text-center(href='#') Otros
+        .col-md-4.col-xs-8
+          .team-box
+            img.img-responsive(src='img/fincas/copa.jpg' alt='')
+            .roles
+              h5
+                strong Copacabana
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+        .col-md-4.col-xs-8
+          .team-box
+            img.img-responsive(src='img/fincas/bsa.jpg' alt='')
+            .roles
+              h5
+                strong Barbosa
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+              i.fa.fa-star.fa-lg
+  // end section fincas

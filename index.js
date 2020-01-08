@@ -4,7 +4,7 @@ const path = require('path')
 const helmet = require('helmet')
 const app = express()
 
-// const fincas = require('./routes/fincas')
+const fincas = require('./routes/fincas')
 
 // Security
 app.use(helmet())
@@ -34,12 +34,13 @@ app.get('/eventos', (req, res) => {
   res.render('eventos')
 })
 
-app.get('/wedding-planner', (req, res) => {
-  res.render('wedding-planner')
+app.get('/wedding', (req, res) => {
+  res.render('wedding')
 })
 
-// fincas(app)
+fincas(app)
 
+// Server listener
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Listening on port http://localhost:3000`)
 })
