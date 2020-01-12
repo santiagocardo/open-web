@@ -4,6 +4,12 @@ const path = require('path')
 const helmet = require('helmet')
 const app = express()
 
+const {
+  notFound,
+  developmentErrors,
+  productionErrors
+} = require('./utils/errorHandlers')
+
 const fincas = require('./routes/fincas')
 
 // Security
@@ -39,6 +45,17 @@ app.get('/wedding', (req, res) => {
 })
 
 fincas(app)
+
+// Not found handler
+app.use(notFound)
+
+// Error handlers
+if (app.get('env') === 'development') {
+  /* Development Error Handler - Prints stack trace */
+  app.use(developmentErrors)
+}
+
+app.use(productionErrors)
 
 // Server listener
 app.listen(process.env.PORT || 3000, () => {

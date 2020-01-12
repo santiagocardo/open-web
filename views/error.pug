@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  .inner
-    h2= status
-    p= message
-  pre.error!= stackHighlighted
+  section#about
+    .container
+      h2.text-center= status
+      h3.text-center= message
+    pre.error!= stackHighlighted

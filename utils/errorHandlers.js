@@ -1,16 +1,16 @@
-exports.catchErrors = (fn) => {
+function catchErrors (fn) {
   return function(req, res, next) {
     return fn(req, res, next).catch(next)
   }
 }
 
-exports.notFound = (req, res, next) => {
-  const err = new Error('Not Found')
+function notFound (req, res, next) {
+  const err = new Error('Oops! Página no encontrada!')
   err.status = 404
   next(err)
 }
 
-exports.developmentErrors = (err, req, res, next) => {
+function developmentErrors (err, req, res, next) {
   err.stack = err.stack || ''
   const errorDetails = {
     message: err.message,
@@ -27,10 +27,17 @@ exports.developmentErrors = (err, req, res, next) => {
   })
 }
 
-exports.productionErrors = (err, req, res, next) => {
+function productionErrors (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error', {
     message: err.message,
     error: {}
   })
+}
+
+module.exports = {
+  catchErrors,
+  notFound,
+  developmentErrors,
+  productionErrors
 }
