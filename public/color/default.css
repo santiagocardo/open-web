@@ -171,3 +171,8 @@ input[type="color"]:focus,
 		width: 2.5em;
 	}
 }
+
+.pressed {
+	text-decoration: none;
+  background-color: #e6e6e6;
+}
