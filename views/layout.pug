@@ -38,8 +38,6 @@ body
                     a(href='/eventos') Eventos
                   li
                     a(href='/wedding') Wedding Planner
-                  li
-                    a(href='/contacto') Contacto
             // /.navbar-collapse
 
   block content
@@ -52,6 +50,9 @@ body
             .col-md-12
               .aligncenter
                 ul.social-network.social-circle
+                  li
+                    a.icoWhatsapp(href='https://api.whatsapp.com/send?phone=+573002765567&amp;text=Me%20gustaría%20saber%20más%20sobre%20los%20precios%20de%20las%20fincas' target='_blank' title='Whatsapp')
+                      i.fa.fa-whatsapp
                   li
                     a.icoFacebook(href='#' title='Facebook')
                       i.fa.fa-facebook
@@ -73,7 +74,7 @@ body
                     Licensing information: https://bootstrapmade.com/license/
                     Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Groovin
                   | Designed by 
-                  a(href='http://santiagocardo.com/') Santiago Cardona
+                  a(href='http://santiagocardo.com/' target='_blank') Santiago Cardona
     a.scrollup(href='#')
       i.fa.fa-angle-up.fa-2x
 

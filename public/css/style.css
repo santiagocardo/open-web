@@ -981,8 +981,8 @@ ul.social-network li {
 	margin: 0 5px;
 }
 
-.social-network a.icoRss:hover {
-	background-color: #F56505;
+.social-network a.icoWhatsapp:hover {
+	background-color: #25D366;
 }
 .social-network a.icoFacebook:hover {
 	background-color:#3B5998;
@@ -991,7 +991,7 @@ ul.social-network li {
 	background-color:#33ccff;
 }
 .social-network a.icoInstagram:hover {
-	background-color:rgb(127, 23, 148);
+	background-color:#833AB4;
 }
 .social-network a.icoVimeo:hover {
 	background-color:#0590B8;
@@ -999,7 +999,7 @@ ul.social-network li {
 .social-network a.icoLinkedin:hover {
 	background-color:#007bb7;
 }
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
+.social-network a.icoWhatsapp:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
 	color:#fff;
 }
