@@ -6,13 +6,13 @@ head
   meta(name='description' content='')
   meta(name='author' content='')
   // styles
-  link(rel='stylesheet' href='/css/fancybox/jquery.fancybox.css')
-  link(href='/css/bootstrap.css' rel='stylesheet')
-  link(href='/css/bootstrap-theme.css' rel='stylesheet')
-  link(rel='stylesheet' href='/css/slippry.css')
-  link(href='/css/style.css' rel='stylesheet')
-  link(rel='stylesheet' href='/color/default.css')
-  script(src='/js/modernizr.custom.js')
+  link(rel='stylesheet' href='../css/fancybox/jquery.fancybox.css')
+  link(href='../css/bootstrap.css' rel='stylesheet')
+  link(href='../css/bootstrap-theme.css' rel='stylesheet')
+  link(rel='stylesheet' href='../css/slippry.css')
+  link(href='../css/style.css' rel='stylesheet')
+  link(rel='stylesheet' href='../color/default.css')
+  script(src='../js/modernizr.custom.js')
 body
   block header
     header
@@ -25,19 +25,20 @@ body
               span.icon-bar
               span.icon-bar
             a.navbar-brand(href='#')
-              img.logo(src='/img/logos/marca.png')
+              img.logo(src='../img/logos/marca.png')
           .navigation
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
               nav
                 ul.nav.navbar-nav.navbar-right
                   li.current
-                    a(href='/') Home
+                    a(href='/fincas/listar') Fincas
                   li
-                    a(href='/fincas') Fincas
+                    a(href='/fincas/crear') Crear Finca
                   li
-                    a(href='/eventos') Eventos
+                    a(href='/fincas/cambiar-pass') Cambiar Contraseña
                   li
-                    a(href='/wedding') Wedding Planner
+                    a(href='/fincas/logout')
+                      i.fas.fa-power-off
             // /.navbar-collapse
 
   block content
@@ -77,20 +78,20 @@ body
 
   block scripts
     // javascript
-    script(src='/js/jquery-1.9.1.min.js')
-    script(src='/js/jquery.easing.js')
-    script(src='/js/classie.js')
-    script(src='/js/bootstrap.js')
-    script(src='/js/slippry.min.js')
-    script(src='/js/nagging-menu.js')
-    script(src='/js/jquery.nav.js')
-    script(src='/js/jquery.scrollTo.js')
-    script(src='/js/jquery.fancybox.pack.js')
-    script(src='/js/jquery.fancybox-media.js')
-    script(src='/js/masonry.pkgd.min.js')
-    script(src='/js/imagesloaded.js')
-    script(src='/js/jquery.nicescroll.min.js')
-    script(src='/js/AnimOnScroll.js')
+    script(src='../js/jquery-1.9.1.min.js')
+    script(src='../js/jquery.easing.js')
+    script(src='../js/classie.js')
+    script(src='../js/bootstrap.js')
+    script(src='../js/slippry.min.js')
+    script(src='../js/nagging-menu.js')
+    script(src='../js/jquery.nav.js')
+    script(src='../js/jquery.scrollTo.js')
+    script(src='../js/jquery.fancybox.pack.js')
+    script(src='../js/jquery.fancybox-media.js')
+    script(src='../js/masonry.pkgd.min.js')
+    script(src='../js/imagesloaded.js')
+    script(src='../js/jquery.nicescroll.min.js')
+    script(src='../js/AnimOnScroll.js')
     script.
       new AnimOnScroll(document.getElementById('grid'), {
         minDuration: 0.4,
@@ -112,5 +113,5 @@ body
           }
         )
       });
-    script(src='/js/custom.js')
-    //- script(src='/contactform/contactform.js')
+    script(src='../js/custom.js')
+    //- script(src='contactform/contactform.js')

@@ -1,0 +1,115 @@
+extends layout-admin
+
+block content
+  // section create finca
+  section#contact.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          h2.text-center Crear Finca
+          hr
+          // start contact form
+          #contact-form.cform
+            form.contactForm(action='/fincas/add' method='POST' role='form' enctype="multipart/form-data")
+              .form-group.text-center
+                .reviewer__stars
+                  each num in [5,4,3,2,1]
+                    input(type="radio" required id=`star${num}` name="rating" value=num)
+                    label(for=`star${num}`) #{num} Stars
+              .form-group
+                input.form-control(type='text' name='code' placeholder='Código' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres')
+                .validation
+              .form-group
+                input.form-control(type="file" name="images" multiple)
+                | Selecciona las imágenes a subir
+                .validation
+              .form-group
+                select(name='location').form-control
+                  option(value='girardota') Girardota
+                  option(value='copacabana') Copacabana
+                  option(value='barbosa') Barbosa
+                  option(value='san-jeronimo') San Jerónimo
+                  option(value='santa-fe') Santa Fe de Ant.
+                  option(value='sopetran') Sopetrán
+                  option(value='otros') Otros
+                .validation
+              .form-group.text-center
+                label.checkbox-inline
+                  input(type='checkbox' name='swimmingPool' value='true')
+                  | Piscina
+                label.checkbox-inline
+                  input(type='checkbox' name='sauna' value='true')
+                  | Sauna
+                label.checkbox-inline
+                  input(type='checkbox' name='footballField' value='true')
+                  | Cancha de fútbol
+                label.checkbox-inline
+                  input(type='checkbox' name='kiosk' value='true')
+                  | Kiosko
+                label.checkbox-inline
+                  input(type='checkbox' name='greenZones' value='true')
+                  | Zonas verdes
+              .form-group.text-center
+                label.checkbox-inline
+                  input(type='checkbox' name='bbq' value='true')
+                  | Asador con BBQ
+                label.checkbox-inline
+                  input(type='checkbox' name='childrenGames' value='true')
+                  | Juegos infantiles
+                label.checkbox-inline
+                  input(type='checkbox' name='parking' value='true')
+                  | Parqueadero
+                label.checkbox-inline
+                  input(type='checkbox' name='billiards' value='true')
+                  | Billar
+              .col-md-4
+                .form-group
+                  select(name='beds').form-control
+                    option(value=1) 1
+                    option(value=2) 2
+                    option(value=3) 3
+                    option(value=4) 4
+                    option(value=5) 5
+                    option(value=6) 6
+                    option(value=7) 7
+                    option(value=8) 8
+                    option(value=9) 9
+                    option(value=10) 10
+                    option(value=11) 11
+                    option(value=12) 12
+                    option(value=13) 13
+                    option(value=14) 14
+                  | Camas
+                  .validation
+              .col-md-4
+                .form-group
+                  select(name='rooms').form-control
+                    option(value=1) 1
+                    option(value=2) 2
+                    option(value=3) 3
+                    option(value=4) 4
+                    option(value=5) 5
+                    option(value=6) 6
+                    option(value=7) 7
+                  | Habitaciones
+                  .validation
+              .col-md-4
+                .form-group
+                  select(name='baths').form-control
+                    option(value=1) 1
+                    option(value=2) 2
+                    option(value=3) 3
+                    option(value=4) 4
+                    option(value=5) 5
+                    option(value=6) 6
+                    option(value=7) 7
+                  | Baños
+                  .validation
+              .form-group
+                textarea.form-control(name='description' rows='5' placeholder='Descripción')
+                .validation
+
+              .text-center
+                button.btn.btn-lg.btn-theme(type='submit') Guardar
+          // END contact form
+  // end create finca

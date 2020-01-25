@@ -1217,3 +1217,39 @@ a.socialIcon:hover, .socialHoverClass {
 		margin-bottom: 30px;
 	}
 }
+
+.reviewer__stars {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+			justify-content: center; }
+	.reviewer__stars input {
+		display: none; }
+		.reviewer__stars input:checked ~ label {
+			color: #FFC40E; }
+		.reviewer__stars input + label {
+			font-size: 0;
+			/* These are in the opposite DOM order
+				 re-order them to be visually in normal order
+				 This is fine for accessibility because our labels have for()
+			 */ }
+			.reviewer__stars input + label:before {
+				content: '\2605';
+				font-size: 2rem; }
+			.reviewer__stars input + label[for="star5"] {
+				-ms-flex-order: 5;
+						order: 5; }
+			.reviewer__stars input + label[for="star4"] {
+				-ms-flex-order: 4;
+						order: 4; }
+			.reviewer__stars input + label[for="star3"] {
+				-ms-flex-order: 3;
+						order: 3; }
+			.reviewer__stars input + label[for="star2"] {
+				-ms-flex-order: 2;
+						order: 2; }
+			.reviewer__stars input + label[for="star1"] {
+				-ms-flex-order: 1;
+						order: 1; }
+			.reviewer__stars input + label:hover, .reviewer__stars input + label:hover ~ label {
+				color: #ffdd74; }
