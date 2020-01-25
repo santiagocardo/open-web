@@ -36,6 +36,10 @@ const fincaSchema = new mongoose.Schema({
   baths: {
     type: Number,
     required: true
+  },
+  description: {
+    type: String,
+    trim: true
   }
 })
 

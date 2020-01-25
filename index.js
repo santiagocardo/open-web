@@ -1,8 +1,11 @@
 const express = require('express')
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const path = require('path')
 const helmet = require('helmet')
 const mongoose = require('mongoose')
+const passport = require('passport')
 const app = express()
 
 // import environmental variables from our variables.env file
@@ -25,6 +28,7 @@ const {
 } = require('./utils/errorHandlers')
 
 const fincasRouter = require('./routes/fincas')
+const authRouter = require('./routes/auth')
 
 // Security
 app.use(helmet())
@@ -39,6 +43,22 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+
+// populates req.cookies with any cookies that came along with the request
+app.use(cookieParser())
+
+// Sessions allow us to store data on visitors from request to request
+// This keeps users logged in and allows us to send flash messages
+app.use(session({
+  secret: process.env.SECRET,
+  key: process.env.KEY,
+  resave: false,
+  saveUninitialized: false
+}))
+
+// Passport JS is what we use to handle our logins
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Routes
 app.get('/', (req, res) => {
@@ -58,7 +78,13 @@ app.get('/wedding', (req, res) => {
   res.render('wedding')
 })
 
+app.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
+
 app.use('/fincas', fincasRouter)
+app.use('/login', authRouter)
 
 // Not found handler
 app.use(notFound)
