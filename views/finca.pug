@@ -1,0 +1,99 @@
+extends layout
+
+block content
+  // Section fincas
+  section#works.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h4
+              span #LugaresPerfectos
+          .sub-heading
+            p
+              | Busca entre las mejores opciones para ti
+      .row
+        .col-md-8.col-sm-7.col-xs-12
+          .team-box
+            ul#grid.grid.effect
+              a.fancybox(data-fancybox-group='gallery' title='' href=`../../uploads/${finca.images[0]}`)
+                img.img-responsive(src=`../../uploads/${finca.images[0]}` alt='')
+              each image, index in finca.images
+                a.fancybox(href=`../../uploads/${finca.images[index + 1]}` data-fancybox-group='gallery' title='')
+            .roles
+              h1
+                strong(style="text-transform:uppercase") Finca #{finca.code}
+              - var n = 0
+              while n < finca.rating
+                i.fa.fa-star.fa-lg.star
+                - n++
+        .col-md-4.col-sm-5.col-xs-12
+          .thumbnail.text-center
+            .caption
+              h3(style="text-transform:capitalize")
+                i.fas.fa-map-marker-alt
+                |  #{finca.location}
+              br
+              .panel
+                // Table
+                table.table
+                  td
+                    i.fas.fa-bed
+                    strong  #{finca.beds} Camas
+                  td
+                    i.fas.fa-door-open
+                    strong  #{finca.rooms} Habitaciones
+                  td
+                    i.fas.fa-shower
+                    strong  #{finca.baths} Baños
+          .jumbotron
+            strong Servicios más populares:
+            if finca.swimmingPool
+              h6
+                i.fas.fa-swimmer
+                strong  Piscina
+            if finca.sauna
+              h6
+                i.fas.fa-hot-tub
+                strong  Sauna
+            if finca.footballField
+              h6
+                i.fas.fa-futbol
+                strong  Cancha de Fútbol
+            if finca.kiosk
+              h6
+                i.fas.fa-parachute-box
+                strong  Kiosko
+            if finca.greenZones
+              h6
+                i.fas.fa-tree
+                strong  Zonas verdes
+            if finca.bbq
+              h6
+                i.fas.fa-fire-alt
+                strong  Asador BBQ
+            if finca.childrenGames
+              h6
+                i.fas.fa-grin-alt
+                strong  Juegos Infantiles
+            if finca.parking
+              h6
+                i.fas.fa-parking
+                strong  Parqueadero
+            if finca.billiards
+              h6
+                i.fas.fa-dot-circle
+                strong  Billar
+            br
+            if finca.description
+              strong Descripción:
+              br
+              small #{finca.description}
+              br
+              br
+              br
+            .aligncenter
+              ul.social-network.social-circle
+                a(href='https://api.whatsapp.com/send?phone=+573002765567&amp;' target='_blank' title='Whatsapp' style="text-decoration: none;") Cotiza ahora! 
+                  i(style="color: rgba(249, 178, 51, 0.96)").fa.fa-whatsapp
+  // end section fincas

@@ -721,7 +721,7 @@ ul.the-icons {
 .grid {
 	max-width: 75em;
 	list-style: none;
-	margin: 40px auto;
+	margin: auto auto;
 	padding: 0;
 }
 
@@ -1253,3 +1253,7 @@ a.socialIcon:hover, .socialHoverClass {
 						order: 1; }
 			.reviewer__stars input + label:hover, .reviewer__stars input + label:hover ~ label {
 				color: #ffdd74; }
+
+.star {
+	color: #FFC40E;
+}

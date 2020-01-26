@@ -1,8 +1,15 @@
 const express = require('express')
 const passport = require('passport')
 const { catchErrors } = require('../utils/errorHandlers')
-const { upload, resize, addFinca } = require('../services/fincas')
 const { isLoggedIn } = require('../services/auth')
+
+const {
+  upload,
+  resize,
+  addFinca,
+  getFinca,
+  newFinca
+} = require('../services/fincas')
 
 const router = express.Router()
 
@@ -13,12 +20,13 @@ router.get('/', catchErrors(async (req, res) => {
   res.render('fincas', { path: req.path })
 }))
 
-router.get('/crear', isLoggedIn, catchErrors(async (req, res) => {
-  res.render('crear-finca')
-}))
+router.get('/finca/:code', catchErrors(getFinca))
+
+router.get('/crear', isLoggedIn, catchErrors(newFinca))
 
 router.post(
   '/add',
+  isLoggedIn,
   upload,
   catchErrors(resize),
   catchErrors(addFinca)

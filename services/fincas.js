@@ -48,8 +48,25 @@ const addFinca = async (req, res) => {
   res.redirect('/fincas')
 }
 
+const getFinca = async (req, res) => {
+  const { code } = req.params
+  const finca = await Finca.findOne({ code })
+  
+  if (!finca) {
+    return res.redirect('/fincas')
+  }
+  
+  res.render('finca',  { finca })
+}
+
+const newFinca = async (req, res) => {
+  res.render('crear-finca')
+}
+
 module.exports = {
   upload,
   resize,
-  addFinca
+  addFinca,
+  getFinca,
+  newFinca
 }
