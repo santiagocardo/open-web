@@ -15,73 +15,26 @@ block content
       .row
         .col-md-2
           .list-group
-            a.list-group-item.text-center(href='/fincas' class=(path.indexOf('/fincas') ? 'pressed' : ''))
+            a.list-group-item.text-center(href='/fincas')
               h6 Todas
-            a.list-group-item.text-center(href='#') Girardota
-            a.list-group-item.text-center(href='#') Copacabana
-            a.list-group-item.text-center(href='#') Barbosa
-            a.list-group-item.text-center(href='#') Sopetrán
-            a.list-group-item.text-center(href='#') San Jerónimo
-            a.list-group-item.text-center(href='#') Santa Fe de Ant.
-            a.list-group-item.text-center(href='#') Otros
+            a.list-group-item.text-center(href='/fincas/ubicacion/girardota' class=(path.includes('/girardota') ? 'pressed' : '')) Girardota
+            a.list-group-item.text-center(href='/fincas/ubicacion/copacabana' class=(path.includes('/copacabana') ? 'pressed' : '')) Copacabana
+            a.list-group-item.text-center(href='/fincas/ubicacion/barbosa' class=(path.includes('/barbosa') ? 'pressed' : '')) Barbosa
+            a.list-group-item.text-center(href='/fincas/ubicacion/sopetran' class=(path.includes('/sopetran') ? 'pressed' : '')) Sopetrán
+            a.list-group-item.text-center(href='/fincas/ubicacion/san-jeronimo' class=(path.includes('/san-jeronimo') ? 'pressed' : '')) San Jerónimo
+            a.list-group-item.text-center(href='/fincas/ubicacion/santa-fe' class=(path.includes('/santa-fe') ? 'pressed' : '')) Santa Fe de Ant.
+            a.list-group-item.text-center(href='/fincas/ubicacion/otros' class=(path.includes('/otros') ? 'pressed' : '')) Otros
         .col-md-10
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/copa.jpg' alt='')
-              .roles
-                h5
-                  strong Copacabana
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-              .roles
-                h5
-                  strong Barbosa
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-              .roles
-                h5
-                  strong Girardota
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-              .roles
-                h5
-                  strong Girardota
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-              .roles
-                h5
-                  strong Girardota
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-          .col-md-6.col-sm-6.col-xs-12
-            .team-box
-              img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-              .roles
-                h5
-                  strong Girardota
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
-                i.fa.fa-star.fa-lg
+          each finca in fincas
+            .col-md-6.col-sm-6.col-xs-12
+              a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
+                .team-box
+                  img.img-responsive(src=`../../uploads/${finca.images[0]}` alt='' style="height: 330px;")
+                  .roles
+                    h5
+                      strong(style="text-transform:uppercase") Finca #{finca.code}
+                    - var n = 0
+                    while n < finca.rating
+                      i.fa.fa-star.fa-lg.star
+                      - n++
   // end section fincas

@@ -48,6 +48,13 @@ const addFinca = async (req, res) => {
   res.redirect('/fincas')
 }
 
+const getFincas = async (req, res) => {
+  const { location } = req.params
+  const fincas = await Finca.find(location ? { location } : {})
+  
+  res.render('fincas', { path: req.path, fincas })
+}
+
 const getFinca = async (req, res) => {
   const { code } = req.params
   const finca = await Finca.findOne({ code })
@@ -67,6 +74,7 @@ module.exports = {
   upload,
   resize,
   addFinca,
+  getFincas,
   getFinca,
   newFinca
 }
