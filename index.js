@@ -22,6 +22,7 @@ mongoose.connection.on('error', (err) => {
 })
 
 const {
+  catchErrors,
   notFound,
   developmentErrors,
   productionErrors
@@ -29,6 +30,7 @@ const {
 
 const fincasRouter = require('./routes/fincas')
 const authRouter = require('./routes/auth')
+const { getRandomFincas } = require('./services/fincas')
 
 // Security
 app.use(helmet())
@@ -61,9 +63,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 // Routes
-app.get('/', (req, res) => {
-  res.render('home')
-})
+app.get('/', catchErrors(getRandomFincas))
 
 app.post('/email', (req, res) => {
   console.log(req.body)

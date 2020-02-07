@@ -1257,3 +1257,11 @@ a.socialIcon:hover, .socialHoverClass {
 .star {
 	color: #FFC40E;
 }
+
+ul.pagination > li > a {
+	color: #555;
+}
+
+ul.pagination > li > a:hover {
+	color: #555;
+}

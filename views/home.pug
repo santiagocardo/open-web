@@ -28,34 +28,18 @@ block content
             p
               | Busca entre las mejores opciones para ti
       .row
-        .col-md-4
-          .team-box
-            img.img-responsive(src='img/fincas/gta.jpg' alt='')
-            .roles
-              h5
-                strong Girardota
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-        .col-md-4
-          .team-box
-            img.img-responsive(src='img/fincas/copa.jpg' alt='')
-            .roles
-              h5
-                strong Copacabana
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-        .col-md-4
-          .team-box
-            img.img-responsive(src='img/fincas/bsa.jpg' alt='')
-            .roles
-              h5
-                strong Barbosa
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
-              i.fa.fa-star.fa-lg
+        each finca in fincas
+          .col-md-4
+            a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
+              .team-box
+                img.img-responsive(src=`../../uploads/${finca.images[0]}` alt='' style="height: 270px;")
+                .roles
+                  h5
+                    strong(style="text-transform:capitalize") #{finca.location}
+                  - var n = 0
+                  while n < finca.rating
+                    i.fa.fa-star.fa-lg.star
+                    - n++
       .row
         .text-center
           a.btn.btn-lg.btn-brown(href="/fincas") Ver todas las fincas

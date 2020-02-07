@@ -49,10 +49,58 @@ const addFinca = async (req, res) => {
 }
 
 const getFincas = async (req, res) => {
-  const { location } = req.params
-  const fincas = await Finca.find(location ? { location } : {})
+  const page = req.params.page || 1
+  const limit = 4
+  const skip = (page * limit) - limit
+
+  const fincasPromise = Finca
+    .find()
+    .skip(skip)
+    .limit(limit)
+  const countPromise = Finca.count()
+
+  const [fincas, count] = await Promise.all([fincasPromise, countPromise])
+
+  const pages = Math.ceil(count / limit)
+  if (!fincas.length && skip) {
+    res.redirect(`/fincas`)
+    return
+  }
   
-  res.render('fincas', { path: req.path, fincas })
+  res.render('fincas', { path: req.path, fincas, page, pages, count })
+}
+
+const getFincasByLocation = async (req, res) => {
+  const { location } = req.params
+  const page = req.params.page || 1
+  const limit = 2
+  const skip = (page * limit) - limit
+
+  const fincasPromise = Finca
+    .find({ location })
+    .skip(skip)
+    .limit(limit)
+  const countPromise = Finca.count({ location })
+
+  const [fincas, count] = await Promise.all([fincasPromise, countPromise])
+
+  const pages = Math.ceil(count / limit)
+  if (!fincas.length && skip) {
+    res.redirect(`/fincas/${location}`)
+    return
+  }
+  
+  res.render('fincas', { path: req.path, fincas, page, pages, count, location })
+}
+
+const getRandomFincas = async (req, res) => {
+  const foundFincas = await Finca.find()
+  const fincas = []
+  for (let i = 0; i < 3; i++) {
+    fincas.push(foundFincas[Math.floor(Math.random() * foundFincas.length)])
+  }
+
+  res.render('home', { fincas })
 }
 
 const getFinca = async (req, res) => {
@@ -75,6 +123,8 @@ module.exports = {
   resize,
   addFinca,
   getFincas,
+  getFincasByLocation,
+  getRandomFincas,
   getFinca,
   newFinca
 }
