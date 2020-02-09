@@ -29,7 +29,7 @@ block content
               | Busca entre las mejores opciones para ti
       .row
         each finca in fincas
-          .col-md-4
+          .col-md-4.col-sm-4.col-xs-12
             a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
               .team-box
                 img.img-responsive(src=finca.images[0] alt='' style="height: 270px;")
