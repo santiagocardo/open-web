@@ -14,7 +14,7 @@ block content
           img(src='img/slide/2.jpg' alt='Diseñamos y producimos todas las celebraciones del año.')
       li
         a(href='#slide3')
-          img(src='img/slide/3.jpg' alt="En nuestros #LugaresPerfectos te ofrecemos diversas fincas en renta para todo el año.")
+          img(src='img/slide/3.jpg' alt="En nuestros #LugaresPerfectos te ofrecemos diversas fincas en renta.")
   // end intro
   // Section fincas
   section#about.section
@@ -32,7 +32,7 @@ block content
           .col-md-4.col-sm-4.col-xs-12
             a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
               .team-box
-                img.img-responsive(src=finca.images[0] alt='' style="height: 270px;")
+                img.img-responsive.foto(src=finca.images[0] alt='')
                 .roles
                   h5
                     strong(style="text-transform:capitalize") #{finca.location}

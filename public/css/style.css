@@ -1135,7 +1135,9 @@ a.socialIcon:hover, .socialHoverClass {
 	left: 0;
 	width: 100%;
 	}
-
+	.photo {
+		height: 300px;
+	}
 }
 
 @media (max-width: 767px) {
@@ -1178,7 +1180,9 @@ a.socialIcon:hover, .socialHoverClass {
 	.team-box {
 		margin-bottom:20px;
 	}
-
+	.photo {
+		height: 255px;
+	}
 	
 }
 
@@ -1215,6 +1219,9 @@ a.socialIcon:hover, .socialHoverClass {
 	}
 	.col-md-6 {
 		margin-bottom: 30px;
+	}
+	.photo {
+		height: 255px;
 	}
 }
 
