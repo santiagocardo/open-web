@@ -27,12 +27,12 @@ block content
             a.list-group-item.text-center(href='/fincas/ubicacion/santa-fe' class=(path.startsWith('/ubicacion/santa-fe') ? 'pressed' : '')) Santa Fe de Ant.
             a.list-group-item.text-center(href='/fincas/ubicacion/otros' class=(path.startsWith('/ubicacion/otros') ? 'pressed' : '')) Otros
         .col-md-10
-          each finca in fincas
-            .row
+          .row
+            each finca in fincas
               .col-md-6.col-sm-6.col-xs-12
                 a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
                   .team-box
-                    img.img-responsive(src=finca.images[0] alt='' style="height: 330px;")
+                    img.img-responsive(src=finca.images[0] alt='' style="height: 350px;")
                     .roles
                       h5
                         strong(style="text-transform:uppercase") Finca #{finca.code}
