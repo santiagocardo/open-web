@@ -11,7 +11,8 @@ const fincaSchema = new mongoose.Schema({
   },
   images: {
     type: [String],
-    required: true
+    required: true,
+    min: 1
   },
   location: {
     type: String,

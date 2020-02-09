@@ -32,7 +32,7 @@ block content
           .col-md-4
             a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
               .team-box
-                img.img-responsive(src=`../../uploads/${finca.images[0]}` alt='' style="height: 270px;")
+                img.img-responsive(src=finca.images[0] alt='' style="height: 270px;")
                 .roles
                   h5
                     strong(style="text-transform:capitalize") #{finca.location}

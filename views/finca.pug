@@ -16,10 +16,12 @@ block content
         .col-md-8.col-sm-7.col-xs-12
           .team-box
             ul#grid.grid.effect
-              a.fancybox(data-fancybox-group='gallery' title='' href=`../../uploads/${finca.images[0]}`)
-                img.img-responsive(src=`../../uploads/${finca.images[0]}` alt='')
-              each image, index in finca.images
-                a.fancybox(href=`../../uploads/${finca.images[index + 1]}` data-fancybox-group='gallery' title='')
+              a.fancybox(data-fancybox-group='gallery' title='' href=finca.images[0])
+                img.img-responsive(src=finca.images[0] alt='')
+              - i = 1
+              while i < finca.images.length
+                a.fancybox(href=finca.images[i] data-fancybox-group='gallery' title='')
+                - i++
             .roles
               h1
                 strong(style="text-transform:uppercase") Finca #{finca.code}

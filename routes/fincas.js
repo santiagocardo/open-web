@@ -26,7 +26,6 @@ router.post(
   '/add',
   isLoggedIn,
   upload,
-  catchErrors(resize),
   catchErrors(addFinca)
 )
 
