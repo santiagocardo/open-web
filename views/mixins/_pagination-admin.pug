@@ -1,0 +1,13 @@
+mixin pagination(page, pages, count, location)
+  nav(aria-label='Page navigation')
+  ul.pagination
+    if page > 1
+      li
+        a(href=`/fincas/${location ? 'listar/' + location + '/' : 'listar/'}page/${page - 1}` aria-label='Previous')
+          span(aria-hidden='true') &laquo;
+    li
+      a(href='#') Página #{page} de #{pages} — #{count} resultados
+    if page < pages
+      li
+        a(href=`/fincas/${location ? 'listar/' + location + '/' : 'listar/'}page/${parseFloat(page) + 1}` aria-label='Next')
+          span(aria-hidden='true') &raquo;

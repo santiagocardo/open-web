@@ -86,11 +86,17 @@ const getFincas = async (req, res) => {
 
   const pages = Math.ceil(count / limit)
   if (!fincas.length && skip) {
-    res.redirect(`/fincas`)
+    res.redirect(req.path.startsWith('/listar') ? '/fincas/listar' : '/fincas')
     return
   }
   
-  res.render('fincas', { path: req.path, fincas, page, pages, count })
+  res.render(req.path.startsWith('/listar') ? 'listar-fincas' : 'fincas', {
+    path: req.path,
+    fincas,
+    page,
+    pages,
+    count
+  })
 }
 
 const getFincasByLocation = async (req, res) => {
@@ -109,11 +115,11 @@ const getFincasByLocation = async (req, res) => {
 
   const pages = Math.ceil(count / limit)
   if (!fincas.length && skip) {
-    res.redirect(`/fincas/${location}`)
+    res.redirect(req.path.startsWith('/listar') ? `/fincas/listar/${location}` : `/fincas/ubicacion/${location}`)
     return
   }
   
-  res.render('fincas', { path: req.path, fincas, page, pages, count, location })
+  res.render(req.path.startsWith('/listar') ? 'listar-fincas' : 'fincas', { path: req.path, fincas, page, pages, count, location })
 }
 
 const getRandomFincas = async (req, res) => {

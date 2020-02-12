@@ -1,0 +1,52 @@
+extends layout-admin
+
+include mixins/_pagination-admin
+
+block content
+  // Section fincas
+  section#about.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .heading
+            h4
+              span #LugaresPerfectos
+          .sub-heading
+            p
+              | Busca entre las mejores opciones para ti
+      .row
+        .col-md-2
+          .list-group
+            a.list-group-item.text-center(href='/fincas/listar')
+              h6 Todas
+            a.list-group-item.text-center(href='/fincas/listar/girardota' class=(path.startsWith('/listar/girardota') ? 'pressed' : '')) Girardota
+            a.list-group-item.text-center(href='/fincas/listar/copacabana' class=(path.startsWith('/listar/copacabana') ? 'pressed' : '')) Copacabana
+            a.list-group-item.text-center(href='/fincas/listar/barbosa' class=(path.startsWith('/listar/barbosa') ? 'pressed' : '')) Barbosa
+            a.list-group-item.text-center(href='/fincas/listar/sopetran' class=(path.startsWith('/listar/sopetran') ? 'pressed' : '')) Sopetrán
+            a.list-group-item.text-center(href='/fincas/listar/san-jeronimo' class=(path.startsWith('/listar/san-jeronimo') ? 'pressed' : '')) San Jerónimo
+            a.list-group-item.text-center(href='/fincas/listar/santa-fe' class=(path.startsWith('/listar/santa-fe') ? 'pressed' : '')) Santa Fe de Ant.
+            a.list-group-item.text-center(href='/fincas/listar/otros' class=(path.startsWith('/listar/otros') ? 'pressed' : '')) Otros
+        .col-md-10
+          .row
+            each finca in fincas
+              .col-md-6.col-sm-6.col-xs-12
+                a(title=`Finca ${finca.code}` href=`/fincas/finca/${finca.code}` style="text-decoration: none;")
+                  .team-box
+                    img.img-responsive.photo(src=finca.images[0] alt='')
+                    .roles
+                      h5
+                        strong(style="text-transform:uppercase") Finca #{finca.code}
+                      - var n = 0
+                      while n < finca.rating
+                        i.fa.fa-star.fa-lg.star
+                        - n++
+                      br
+                      br
+                      a(title=`Finca ${finca.code}` href=`/fincas` style="text-decoration: none;")
+                        i.fa.fa-edit.fa-lg
+                      a(title=`Finca ${finca.code}` href=`/fincas` style="text-decoration: none;")
+                        i.fas.fa-trash.fa-lg
+        .col-md-12
+          .aligncenter
+            +pagination(page, pages, count, location)
+  // end section fincas
