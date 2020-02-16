@@ -7,7 +7,7 @@ const fincaSchema = new mongoose.Schema({
     required: true,
     unique: true,
     trim: true,
-    lowercase: true
+    uppercase: true
   },
   images: {
     type: [String],

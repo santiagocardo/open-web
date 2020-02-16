@@ -147,6 +147,11 @@ const newFinca = async (req, res) => {
   res.render('crear-finca')
 }
 
+const deleteFinca = async (req, res) => {
+  await Finca.deleteOne({ _id: req.params.id })
+  res.redirect('back')
+}
+
 module.exports = {
   upload,
   resize,
@@ -155,5 +160,6 @@ module.exports = {
   getFincasByLocation,
   getRandomFincas,
   getFinca,
-  newFinca
+  newFinca,
+  deleteFinca
 }

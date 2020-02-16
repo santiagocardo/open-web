@@ -35,17 +35,16 @@ block content
                     img.img-responsive.photo(src=finca.images[0] alt='')
                     .roles
                       h5
-                        strong(style="text-transform:uppercase") Finca #{finca.code}
+                        strong Finca #{finca.code}
                       - var n = 0
                       while n < finca.rating
                         i.fa.fa-star.fa-lg.star
                         - n++
-                      br
-                      br
-                      a(title=`Finca ${finca.code}` href=`/fincas` style="text-decoration: none;")
+                    form.aligncenter(action=`/fincas/${finca._id}` method="POST")
+                      a.actions(title=`Finca ${finca.code}` href=`/fincas/${finca._id}` style="text-decoration: none;")
                         i.fa.fa-edit.fa-lg
-                      a(title=`Finca ${finca.code}` href=`/fincas` style="text-decoration: none;")
-                        i.fas.fa-trash.fa-lg
+                      button.actions(type='submit')
+                        i.fas.fa-trash.fa-lg           
         .col-md-12
           .aligncenter
             +pagination(page, pages, count, location)

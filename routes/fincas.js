@@ -9,7 +9,8 @@ const {
   getFincas,
   getFincasByLocation,
   getFinca,
-  newFinca
+  newFinca,
+  deleteFinca
 } = require('../services/fincas')
 
 const router = express.Router()
@@ -31,5 +32,7 @@ router.post(
   upload,
   catchErrors(addFinca)
 )
+
+router.post('/:id', catchErrors(deleteFinca))
 
 module.exports = router
