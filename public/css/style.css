@@ -1280,10 +1280,24 @@ ul.pagination > li > a:hover {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-	margin: 30px 1% 5px;
+	margin-top: 20px;
 	color: #888;
 }
 
 .actions:hover {
 	color: #1a1a1a;
+}
+
+.grow:hover
+{
+	-webkit-transform: scale(1.02);
+	-ms-transform: scale(1.02);
+	transform: scale(1.02);
+	opacity:0.8;
+	transition:all 0.3s ease;
+	box-shadow:
+					1px 1px #888,
+					2px 2px #888,
+					3px 3px #888,
+					4px 4px #888;
 }

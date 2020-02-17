@@ -38,7 +38,18 @@ const isLoggedIn = (req, res, next) => {
   res.redirect('/login')
 }
 
+const updatePassword = async (req, res) => {
+  const { last, newPass, newConf } = req.body
+
+  if (req.user.password !== last) throw new Error('Contraseña incorrecta!')
+  if (newPass !== newConf) throw new Error('Las contraseñas no coinciden!')
+
+  await User.findOneAndUpdate({ _id: req.user._id }, { password: newPass }, { runValidators: true })
+  res.redirect('/fincas/listar')
+}
+
 module.exports = {
   login,
-  isLoggedIn
+  isLoggedIn,
+  updatePassword
 }

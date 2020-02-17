@@ -10,7 +10,8 @@ const {
   getFincasByLocation,
   getFinca,
   newFinca,
-  deleteFinca
+  deleteFinca,
+  changePassword
 } = require('../services/fincas')
 
 const router = express.Router()
@@ -20,7 +21,7 @@ router.get('/page/:page', catchErrors(getFincas))
 router.get('/ubicacion/:location', catchErrors(getFincasByLocation))
 router.get('/ubicacion/:location/page/:page', catchErrors(getFincasByLocation))
 router.get('/finca/:code', catchErrors(getFinca))
-router.get('/crear', isLoggedIn, catchErrors(newFinca))
+router.get('/crear', isLoggedIn, newFinca)
 router.get('/listar', isLoggedIn, catchErrors(getFincas))
 router.get('/listar/page/:page', isLoggedIn, catchErrors(getFincas))
 router.get('/listar/:location', isLoggedIn, catchErrors(getFincasByLocation))
@@ -34,5 +35,6 @@ router.post(
 )
 
 router.post('/:id', catchErrors(deleteFinca))
+router.get('/cambiar-pass', changePassword)
 
 module.exports = router

@@ -17,10 +17,10 @@ block content
                     input(type="radio" required id=`star${num}` name="rating" value=num)
                     label(for=`star${num}`) #{num} Stars
               .form-group
-                input.form-control(type='text' name='code' placeholder='Código' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres')
+                input.form-control(type='text' name='code' placeholder='Código' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
                 .validation
               .form-group
-                input.form-control(type="file" name="images" multiple)
+                input.form-control(type="file" name="images" multiple required)
                 | Selecciona las imágenes a subir
                 .validation
               .form-group

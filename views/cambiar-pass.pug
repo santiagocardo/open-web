@@ -1,0 +1,28 @@
+extends layout-admin
+
+block content
+  // section create finca
+  section#contact.section
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          h2.text-center 
+            i.fas.fa-unlock-alt.fa-sm
+            |   Cambiar Contraseña
+          hr
+          // start change password
+          #contact-form.cform
+            form.contactForm(action='/login/update-password' method='POST' role='form')
+              .form-group
+                input.form-control(type='password' name='last' placeholder='Contraseña Anterior' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
+                .validation
+              .form-group
+                input.form-control(type='password' name='newPass' placeholder='Nueva Contraseña' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
+                .validation
+              .form-group
+                input.form-control(type='password' name='newConf' placeholder='Confirmar Nueva Contraseña' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
+                .validation
+              .aligncenter
+                button.btn.btn-lg.btn-theme(type='submit') Guardar
+          // END change password
+  // end create finca

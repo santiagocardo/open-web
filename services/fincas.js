@@ -63,12 +63,15 @@ const resize = async (req, res, next) => {
 
 const addFinca = async (req, res) => {
   const existingCode = await Finca.findOne({ code: req.body.code })
+
   if (existingCode) {
     throw new Error('El codigo de la finca ya existe!')
   }
+
   req.body.images = req.files.map(image => image.location)
-  const finca = await (new Finca(req.body)).save()
-  res.redirect('/fincas')
+  await (new Finca(req.body)).save()
+  
+  res.redirect('/fincas/listar')
 }
 
 const getFincas = async (req, res) => {
@@ -143,13 +146,32 @@ const getFinca = async (req, res) => {
   res.render('finca',  { finca })
 }
 
-const newFinca = async (req, res) => {
+const newFinca = (req, res) => {
   res.render('crear-finca')
 }
 
 const deleteFinca = async (req, res) => {
-  await Finca.deleteOne({ _id: req.params.id })
+  const images = JSON.parse(req.body.images).map(image => {
+    return { Key: image.split('https://open-fincas.s3.us-east-2.amazonaws.com/')[1] }
+  })
+
+  const deleteParam = {
+    Bucket: 'open-fincas',
+    Delete: {
+        Objects: images
+    }
+  }
+
+  await Promise.all([
+    s3.deleteObjects(deleteParam).promise(),
+    Finca.deleteOne({ _id: req.params.id })
+  ])
+
   res.redirect('back')
+}
+
+const changePassword = async (req, res) => {
+  res.render('cambiar-pass')
 }
 
 module.exports = {
@@ -161,5 +183,6 @@ module.exports = {
   getRandomFincas,
   getFinca,
   newFinca,
-  deleteFinca
+  deleteFinca,
+  changePassword
 }
