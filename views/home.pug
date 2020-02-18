@@ -159,36 +159,11 @@ block content
               | En Open encontrarás gran variedad fincas y todo tipo de espacios campestres, con nuestra experiencia en eventos empresariales y sociales podremos brindarte los mejores eventos y experiencias de tu vida, también podrás disfrutar de los viajes mas deseados de tu vida
     .container
       .row
-        .col-md-6
+        .col-md-12
           h4 Encuentra nuestra Casa Open
           p Ver desde mapa de Google
           // map
           #section-map.clearfix
             iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1982.5676665633841!2d-75.4500292!3d6.3765252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e443b4ef9350b07%3A0x5d1af6932995f0a!2sCasa%20Open%20Fincas%20Eventos%20%26%20Catering!5e0!3m2!1ses!2sco!4v1577722606234!5m2!1ses!2sco' width='100%' height='400' frameborder='0' style='border:0' allowfullscreen='')
-        .col-md-6
-          h4
-            i.icon-envelope
-            strong Formulario de Contacto
-          p
-            | ¡Cotiza Ahora!
-          // start contact form
-          #contact-form.cform
-            #sendmessage Tu mensaje ha sido enviado. Gracias!
-            #errormessage
-            form.contactForm(action='/email' method='post' role='form')
-              .form-group
-                input#name.form-control(type='text' name='name' placeholder='Tu Nombre' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres')
-                .validation
-              .form-group
-                input#email.form-control(type='email' name='email' placeholder='Tu Email' data-rule='email' data-msg='Por favor ingresa un email válido')
-                .validation
-              .form-group
-                input#subject.form-control(type='text' name='phone' placeholder='Teléfono' data-rule='minlen:7' data-msg='Por favor ingresa al menos 7 dígitos')
-                .validation
-              .form-group
-                textarea.form-control(name='message' rows='5' data-rule='required' data-msg='Por favor escribe algo para nosotros' placeholder='Mensaje')
-                .validation
-              .text-center
-                button.btn.btn-lg.btn-theme(type='submit') Enviar Mensaje
           // END contact form
   // end section contact
