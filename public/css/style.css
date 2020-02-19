@@ -1294,10 +1294,20 @@ ul.pagination > li > a:hover {
 	-ms-transform: scale(1.02);
 	transform: scale(1.02);
 	opacity:0.8;
-	transition:all 0.3s ease;
 	box-shadow:
-					1px 1px #888,
-					2px 2px #888,
-					3px 3px #888,
-					4px 4px #888;
+					1px 1px #999,
+					2px 2px #999,
+					3px 3px #999;
+}
+
+ul > a > img {
+	transition:all 0.3s ease;
+}
+
+.color {
+	color: rgba(249, 178, 51, 0.96)
+}
+
+.color:hover {
+	color: rgba(237, 154, 10, 0.96)
 }
