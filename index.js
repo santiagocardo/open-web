@@ -66,17 +66,12 @@ app.use(passport.session())
 // Routes
 app.get('/', catchErrors(getRandomFincas))
 
-app.post('/email', (req, res) => {
-  console.log(req.body)
-  res.redirect('/')
-})
-
 app.get('/eventos', (req, res) => {
-  res.render('eventos')
+  res.render('eventos', { admin: req.isAuthenticated() })
 })
 
 app.get('/wedding', (req, res) => {
-  res.render('wedding')
+  res.render('wedding', { admin: req.isAuthenticated() })
 })
 
 app.get('/logout', (req, res) => {

@@ -98,7 +98,8 @@ const getFincas = async (req, res) => {
     fincas,
     page,
     pages,
-    count
+    count,
+    admin: req.isAuthenticated()
   })
 }
 
@@ -122,7 +123,15 @@ const getFincasByLocation = async (req, res) => {
     return
   }
   
-  res.render(req.path.startsWith('/listar') ? 'listar-fincas' : 'fincas', { path: req.path, fincas, page, pages, count, location })
+  res.render(req.path.startsWith('/listar') ? 'listar-fincas' : 'fincas', {
+    path: req.path,
+    fincas,
+    page,
+    pages,
+    count,
+    location,
+    admin: req.isAuthenticated()
+  })
 }
 
 const getRandomFincas = async (req, res) => {
@@ -132,7 +141,7 @@ const getRandomFincas = async (req, res) => {
     fincas.push(foundFincas[Math.floor(Math.random() * foundFincas.length)])
   }
 
-  res.render('home', { fincas })
+  res.render('home', { fincas, admin: req.isAuthenticated() })
 }
 
 const getFinca = async (req, res) => {
@@ -143,7 +152,7 @@ const getFinca = async (req, res) => {
     return res.redirect('/fincas')
   }
   
-  res.render('finca',  { finca })
+  res.render('finca',  { finca, admin: req.isAuthenticated() })
 }
 
 const newFinca = (req, res) => {

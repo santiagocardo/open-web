@@ -20,6 +20,7 @@ const fincaSchema = new mongoose.Schema({
   },
   swimmingPool: Boolean,
   turco: Boolean,
+  jacuzzi: Boolean,
   footballField: Boolean,
   kiosk: Boolean,
   greenZones: Boolean,

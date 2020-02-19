@@ -30,7 +30,7 @@ body
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
               nav
                 ul.nav.navbar-nav.navbar-right
-                  li.current
+                  li
                     a(href='/') Home
                   li
                     a(href='/fincas') Fincas
@@ -38,6 +38,11 @@ body
                     a(href='/eventos') Eventos
                   li
                     a(href='/wedding') Wedding Planner
+                  if (admin)
+                    li
+                      a(href='/fincas/listar')
+                        i.fas.fa-user-circle
+                        |  Admin
             // /.navbar-collapse
 
   block content
