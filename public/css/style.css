@@ -1126,6 +1126,34 @@ a.socialIcon:hover, .socialHoverClass {
 
 /* ==== media screen queries ==== */
 
+@media (min-width: 1025px) {
+
+	.default {
+	position: fixed;
+	background:#2a2a2a;
+	top:0;
+	left: 0;
+	width: 100%;
+	}
+	.team-box img.img-responsive.photo {
+		height: 350px;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1024px) {
+
+	.default {
+	position: fixed;
+	background:#2a2a2a;
+	top:0;
+	left: 0;
+	width: 100%;
+	}
+	.team-box img.img-responsive.photo {
+		height: 280px;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 979px) {
 
 	.default {
@@ -1135,8 +1163,8 @@ a.socialIcon:hover, .socialHoverClass {
 	left: 0;
 	width: 100%;
 	}
-	.photo {
-		height: 300px;
+	.team-box img.img-responsive.photo {
+		height: 280px;
 	}
 }
 
@@ -1180,10 +1208,9 @@ a.socialIcon:hover, .socialHoverClass {
 	.team-box {
 		margin-bottom:20px;
 	}
-	.photo {
-		height: 255px;
+	.team-box img.img-responsive.photo {
+		height: 280px;
 	}
-	
 }
 
 
@@ -1220,8 +1247,8 @@ a.socialIcon:hover, .socialHoverClass {
 	.col-md-6 {
 		margin-bottom: 30px;
 	}
-	.photo {
-		height: 255px;
+	.team-box img.img-responsive.photo {
+		height: 280px;
 	}
 }
 

@@ -83,6 +83,7 @@ const getFincas = async (req, res) => {
     .find()
     .skip(skip)
     .limit(limit)
+    .sort({ rating: -1 })
   const countPromise = Finca.estimatedDocumentCount()
 
   const [fincas, count] = await Promise.all([fincasPromise, countPromise])
@@ -113,6 +114,8 @@ const getFincasByLocation = async (req, res) => {
     .find({ location })
     .skip(skip)
     .limit(limit)
+    .sort({ code: 1 })
+    .collation( { locale: "en_US", numericOrdering: true })
   const countPromise = Finca.countDocuments({ location })
 
   const [fincas, count] = await Promise.all([fincasPromise, countPromise])
