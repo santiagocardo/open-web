@@ -1307,7 +1307,7 @@ ul.pagination > li > a:hover {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-	margin-top: 20px;
+	margin: 20px 10px;
 	color: #888;
 }
 

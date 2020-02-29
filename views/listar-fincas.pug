@@ -23,8 +23,8 @@ block content
             a.list-group-item.text-center(href='/fincas/listar/copacabana' class=(path.startsWith('/listar/copacabana') ? 'pressed' : '')) Copacabana
             a.list-group-item.text-center(href='/fincas/listar/barbosa' class=(path.startsWith('/listar/barbosa') ? 'pressed' : '')) Barbosa
             a.list-group-item.text-center(href='/fincas/listar/sopetran' class=(path.startsWith('/listar/sopetran') ? 'pressed' : '')) Sopetrán
-            a.list-group-item.text-center(href='/fincas/listar/san-jeronimo' class=(path.startsWith('/listar/san-jeronimo') ? 'pressed' : '')) San Jerónimo
-            a.list-group-item.text-center(href='/fincas/listar/santa-fe' class=(path.startsWith('/listar/santa-fe') ? 'pressed' : '')) Santa Fe de Ant.
+            a.list-group-item.text-center(href='/fincas/listar/san%20jerónimo' class=(path.startsWith('/listar/san%20je') ? 'pressed' : '')) San Jerónimo
+            a.list-group-item.text-center(href='/fincas/listar/santa%20fe' class=(path.startsWith('/listar/santa%20fe') ? 'pressed' : '')) Santa Fe de Ant.
             a.list-group-item.text-center(href='/fincas/listar/otros' class=(path.startsWith('/listar/otros') ? 'pressed' : '')) Otros
         .col-md-10
           .row
@@ -40,9 +40,11 @@ block content
                       while n < finca.rating
                         i.fa.fa-star.fa-lg.star
                         - n++
-                    form.aligncenter(action=`/fincas/${finca._id}` method="POST")
+                    form.aligncenter(action=`/fincas/${finca._id}` method="POST" onsubmit="return confirm('Estás seguro de eliminar esta finca?');")
                       input(type='hidden' name='images' value=finca.images)
-                      button.actions(type='submit')
+                      a.actions(href=`/fincas/editar/${finca._id}`)
+                        i.fas.fa-edit.fa-lg 
+                      button.actions(type='submit' confirm)
                         i.fas.fa-trash.fa-lg         
         .col-md-12
           .aligncenter

@@ -159,7 +159,37 @@ const getFinca = async (req, res) => {
 }
 
 const newFinca = (req, res) => {
-  res.render('crear-finca')
+  res.render('crear-finca', { title: 'Crear Finca', finca: {} })
+}
+
+const editFinca = async (req, res) => {
+  const { id } = req.params
+  const finca = await Finca.findOne({ _id: id })
+
+  res.render('crear-finca', { title: 'Editar Finca', finca })
+}
+
+const updateFinca = async (req, res) => {
+  const { id } = req.params
+  const { body } = req
+
+  body.swimmingPool = body.swimmingPool ? true : false
+  body.turco = body.turco ? true : false
+  body.jacuzzi = body.jacuzzi ? true : false
+  body.footballField = body.footballField ? true : false
+  body.kiosk = body.kiosk ? true : false
+  body.greenZones = body.greenZones ? true : false
+  body.bbq = body.bbq ? true : false
+  body.childrenGames = body.childrenGames ? true : false
+  body.parking = body.parking ? true : false
+  body.billiards = body.billiards ? true : false
+
+  const updatedFinca = await Finca.findOneAndUpdate({ _id: id }, body, {
+    new: true, // return the new store instead of the old one
+    runValidators: true
+  }).exec()
+
+  res.redirect(`/fincas/finca/${updatedFinca.code}`)
 }
 
 const deleteFinca = async (req, res) => {
@@ -196,5 +226,7 @@ module.exports = {
   getFinca,
   newFinca,
   deleteFinca,
+  editFinca,
+  updateFinca,
   changePassword
 }

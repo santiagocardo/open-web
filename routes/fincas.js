@@ -11,6 +11,8 @@ const {
   getFinca,
   newFinca,
   deleteFinca,
+  editFinca,
+  updateFinca,
   changePassword
 } = require('../services/fincas')
 
@@ -34,6 +36,11 @@ router.post(
   catchErrors(addFinca)
 )
 
+router.get('/editar/:id', catchErrors(editFinca))
+router.post(
+  '/add/:id',
+  catchErrors(updateFinca)
+)
 router.post('/:id', catchErrors(deleteFinca))
 router.get('/cambiar-pass', changePassword)
 

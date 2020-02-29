@@ -6,79 +6,79 @@ block content
     .container
       .row
         .col-md-8.col-md-offset-2
-          h2.text-center Crear Finca
+          h2.text-center #{title}
           hr
           // start contact form
           #contact-form.cform
-            form.contactForm(action='/fincas/add' method='POST' role='form' enctype="multipart/form-data")
+            form.contactForm(action=`/fincas/add/${finca._id || ''}` method='POST' role='form' enctype=`${finca._id ? false : 'multipart/form-data'}`)
               .form-group.text-center
                 .reviewer__stars
                   each num in [5,4,3,2,1]
-                    input(type="radio" required id=`star${num}` name="rating" value=num)
+                    input(type="radio" id=`star${num}` name="rating" value=num)
                     label(for=`star${num}`) #{num} Stars
               .form-group
-                input.form-control(type='text' name='code' placeholder='Código' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
+                input.form-control(type='text' name='code' value=finca.code placeholder='Código' data-rule='minlen:4' data-msg='Por favor ingresa al menos 4 caracteres' required)
                 .validation
-              .form-group
-                input.form-control(type="file" name="images" multiple required)
-                | Selecciona las imágenes a subir
-                .validation
+              if !finca._id
+                .form-group
+                  input.form-control(type="file" name="images" multiple)
+                  | Selecciona las imágenes a subir
+                  .validation
               .form-group
                 select(name='location').form-control
-                  option(value='girardota') Girardota
-                  option(value='copacabana') Copacabana
-                  option(value='barbosa') Barbosa
-                  option(value='san-jeronimo') San Jerónimo
-                  option(value='santa-fe') Santa Fe de Ant.
-                  option(value='sopetran') Sopetrán
-                  option(value='otros') Otros
+                  option(value='girardota' selected=(finca.location === 'girardota')) Girardota
+                  option(value='copacabana' selected=(finca.location === 'copacabana')) Copacabana
+                  option(value='barbosa' selected=(finca.location === 'barbosa')) Barbosa
+                  option(value='san jerónimo'  selected=(finca.location === 'san jerónimo')) San Jerónimo
+                  option(value='santa fe'  selected=(finca.location === 'santa fe')) Santa Fe de Ant.
+                  option(value='sopetran'  selected=(finca.location === 'sopetran')) Sopetrán
+                  option(value='otros'  selected=(finca.location === 'otros')) Otros
                 .validation
-              .form-group.text-center
+              .form-group.text-center.check
                 label.checkbox-inline
-                  input(type='checkbox' name='swimmingPool' value='true')
+                  input(type='checkbox' value='true' name='swimmingPool' checked=finca.swimmingPool)
                   | Piscina
                 label.checkbox-inline
-                  input(type='checkbox' name='turco' value='true')
+                  input(type='checkbox' value='true' name='turco' checked=finca.turco)
                   | Turco
                 label.checkbox-inline
-                  input(type='checkbox' name='jacuzzi' value='true')
+                  input(type='checkbox' value='true' name='jacuzzi' checked=finca.jacuzzi)
                   | Jacuzzi
                 label.checkbox-inline
-                  input(type='checkbox' name='footballField' value='true')
+                  input(type='checkbox' value='true' name='footballField' checked=finca.footballField)
                   | Cancha de fútbol
                 label.checkbox-inline
-                  input(type='checkbox' name='kiosk' value='true')
+                  input(type='checkbox' value='true' name='kiosk' checked=finca.kiosk)
                   | Kiosko
                 label.checkbox-inline
-                  input(type='checkbox' name='greenZones' value='true')
+                  input(type='checkbox' value='true' name='greenZones' checked=finca.greenZones)
                   | Zonas verdes
-              .form-group.text-center
                 label.checkbox-inline
-                  input(type='checkbox' name='bbq' value='true')
+                  input(type='checkbox' value='true' name='bbq' checked=finca.bbq)
                   | Asador con BBQ
                 label.checkbox-inline
-                  input(type='checkbox' name='childrenGames' value='true')
+                  input(type='checkbox' value='true' name='childrenGames' checked=finca.childrenGames)
                   | Juegos infantiles
                 label.checkbox-inline
-                  input(type='checkbox' name='parking' value='true')
+                  input(type='checkbox' value='true' name='parking' checked=finca.parking)
                   | Parqueadero
                 label.checkbox-inline
-                  input(type='checkbox' name='billiards' value='true')
+                  input(type='checkbox' value='true' name='billiards' checked=finca.billiards)
                   | Billar
               .col-md-4
                 .form-group
-                  input.form-control(type='number' name='beds' placeholder='Camas' data-rule='minlen:1' data-msg='Por favor ingresa el número de camas' required)
+                  input.form-control(type='number' name='beds' value=finca.beds placeholder='Camas' data-rule='minlen:1' data-msg='Por favor ingresa el número de camas' required)
                   .validation
               .col-md-4
                 .form-group
-                  input.form-control(type='number' name='rooms' placeholder='Habitaciones' data-rule='minlen:1' data-msg='Por favor ingresa el número de habitaciones' required)
+                  input.form-control(type='number' name='rooms' value=finca.rooms placeholder='Habitaciones' data-rule='minlen:1' data-msg='Por favor ingresa el número de habitaciones' required)
                   .validation
               .col-md-4
                 .form-group
-                  input.form-control(type='number' name='baths' placeholder='Baños' data-rule='minlen:1' data-msg='Por favor ingresa el número de baños' required)
+                  input.form-control(type='number' name='baths' value=finca.baths placeholder='Baños' data-rule='minlen:1' data-msg='Por favor ingresa el número de baños' required)
                   .validation
               .form-group
-                textarea.form-control(name='description' rows='5' placeholder='Descripción')
+                textarea.form-control(name='description' rows='5' placeholder='Descripción')=finca.description
                 .validation
 
               .text-center
